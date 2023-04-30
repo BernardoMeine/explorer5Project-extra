@@ -7,6 +7,7 @@
 :root {
   --ff-texting: 'Staatliches', cursive;
   --ff-paragraph: 'Palanquin', sans-serif;
+  --ff-desktop-p: 'Roboto', sans-serif;
 
   --bg-header: #8E9AAF;
   --bg-primary: #EFF1FF;
@@ -29,6 +30,100 @@ body {
   overflow-x: hidden;
 
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    overflow-x: visible;
+  }
+
+  header {
+    min-width:37.7rem;
+  }
+
+  header::after {
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a rhoncus leo. Donec at scelerisque magna. Nullam vitae neque sit amet erat dignissim cursus ac ac lectus. Aliquam erat volutpat. Praesent at quam aliquet, pharetra est in, sagittis lorem.elit. Donec a rhoncus leo. Donec at scelerisque magna. Nullam vitae neque sit amet erat dignissim cursus ac ac lectus. Aliquam erat volutpat. Praesent at quam aliquet, pharetra est in, sagittis lorem. ";
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    font-family: var(--ff-desktop-p);
+    color: #FFFFFF;
+    padding: 3.2rem 4.8rem 0 5.4rem; 
+  }
+
+  .card h2 {
+    visibility: hidden;
+    display: none;
+  }
+
+  main p{
+    visibility: hidden;
+    display: none;
+  }
+
+  .card-groups {
+    display: grid !important;
+    grid-template-areas: 
+    "A C E"
+    "B C F"
+    "B D F";
+    margin-left: 9.8rem;
+  }
+
+  .card-groups div:nth-child(1) {
+    grid-area: A;
+  }
+
+  .card-groups div:nth-child(2) {
+    grid-area: C;
+  }
+
+  .card-groups div:nth-child(3) {
+    grid-area: D
+  }
+
+  .card-groups div:nth-child(4) {
+    grid-area: B
+  }
+
+  .card-groups div:nth-child(5) {
+    grid-area: E;
+    display:grid !important;
+  }
+
+  .card-groups div:nth-child(6) {
+    grid-area: F;
+    display: grid !important;
+  }
+
+  footer {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+
+    text-align: center;
+
+    color: #4A4E69;
+
+    mix-blend-mode: normal;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 5rem;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: #4A4E69;
+  }
+
 }
 
 header {
@@ -86,6 +181,14 @@ main p {
   max-width:32rem;
 }
 
+.card-groups div:nth-child(5) {
+  display: none;
+}
+
+.card-groups div:nth-child(6) {
+  display: none;
+}
+
 .card img {
   transition: all 400ms;
   animation: rightleft 700ms;
@@ -116,6 +219,10 @@ main p {
   flex-direction: column;
 
   animation: leftright 700ms;
+}
+
+footer {
+  display: none;
 }
 
 @keyframes rightleft {
